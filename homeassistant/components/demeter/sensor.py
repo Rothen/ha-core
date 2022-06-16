@@ -20,11 +20,12 @@ async def async_setup_entry(
     entities = []
     api: PlantWateringAPI = hass.data[DOMAIN][entry.unique_id]
     await api.load_mac_address()
-    entities.append(ExampleSensor(api, 1))
+    entities.append(MoistureSensor(api, 1))
+    entities.append(MoistureSensor(api, 2))
     async_add_entities(entities)
 
 
-class ExampleSensor(SensorEntity):
+class MoistureSensor(SensorEntity):
     """Representation of a Moisture Sensor."""
 
     _attr_native_unit_of_measurement = PERCENTAGE

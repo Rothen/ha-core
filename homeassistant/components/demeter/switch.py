@@ -17,6 +17,7 @@ async def async_setup_entry(
     await api.load_mac_address()
 
     entities.append(PumpEntity(api, 1))
+    entities.append(PumpEntity(api, 2))
     # await hass.async_add_executor_job(hass.data[DOMAIN][entry.unique_id].load_mac_address())
     async_add_entities(entities)
 

@@ -2,11 +2,8 @@
 from unittest.mock import patch
 
 from homeassistant import config_entries
-from homeassistant.components.plant_watering.config_flow import (
-    CannotConnect,
-    InvalidAuth,
-)
-from homeassistant.components.plant_watering.const import DOMAIN
+from homeassistant.components.demeter.config_flow import CannotConnect, InvalidAuth
+from homeassistant.components.demeter.const import DOMAIN
 from homeassistant.core import HomeAssistant
 from homeassistant.data_entry_flow import RESULT_TYPE_CREATE_ENTRY, RESULT_TYPE_FORM
 
@@ -20,10 +17,10 @@ async def test_form(hass: HomeAssistant) -> None:
     assert result["errors"] is None
 
     with patch(
-        "homeassistant.components.plant_watering.config_flow.PlaceholderHub.authenticate",
+        "homeassistant.components.demeter.config_flow.PlaceholderHub.authenticate",
         return_value=True,
     ), patch(
-        "homeassistant.components.plant_watering.async_setup_entry",
+        "homeassistant.components.demeter.async_setup_entry",
         return_value=True,
     ) as mock_setup_entry:
         result2 = await hass.config_entries.flow.async_configure(
@@ -53,7 +50,7 @@ async def test_form_invalid_auth(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.plant_watering.config_flow.PlaceholderHub.authenticate",
+        "homeassistant.components.demeter.config_flow.PlaceholderHub.authenticate",
         side_effect=InvalidAuth,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -76,7 +73,7 @@ async def test_form_cannot_connect(hass: HomeAssistant) -> None:
     )
 
     with patch(
-        "homeassistant.components.plant_watering.config_flow.PlaceholderHub.authenticate",
+        "homeassistant.components.demeter.config_flow.PlaceholderHub.authenticate",
         side_effect=CannotConnect,
     ):
         result2 = await hass.config_entries.flow.async_configure(

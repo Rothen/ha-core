@@ -214,6 +214,7 @@ build.json @home-assistant/supervisor
 /homeassistant/components/delijn/ @bollewolle @Emilv2
 /homeassistant/components/deluge/ @tkdrob
 /tests/components/deluge/ @tkdrob
+/homeassistant/components/demeter/ @Rothen
 /homeassistant/components/demo/ @home-assistant/core
 /tests/components/demo/ @home-assistant/core
 /homeassistant/components/denonavr/ @ol-iver @starkillerOG
@@ -766,7 +767,6 @@ build.json @home-assistant/supervisor
 /tests/components/pilight/ @trekky12
 /homeassistant/components/plaato/ @JohNan
 /tests/components/plaato/ @JohNan
-/homeassistant/components/plant_watering/ @Rothen
 /homeassistant/components/plex/ @jjlawren
 /tests/components/plex/ @jjlawren
 /homeassistant/components/plugwise/ @CoMPaTech @bouwew @brefra @frenck

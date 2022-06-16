@@ -1,8 +1,8 @@
 {
-  "domain": "plant_watering",
+  "domain": "demeter",
   "name": "Plant Watering",
   "config_flow": true,
-  "documentation": "https://www.home-assistant.io/integrations/plant_watering",
+  "documentation": "https://www.home-assistant.io/integrations/demeter",
   "requirements": [],
   "ssdp": [],
   "zeroconf": [],
